@@ -15,13 +15,15 @@ Spring microservice Notes(using Spring boot)
 		8-	Dynamic instance maintenance across all micro-service
 		
 		List of spring cloud starter
-		1-	Config client & Config server
-		2-	Feign 
-		3-	Ribbon
+		1-	Config client & Config server (central config management)
+		2-	Feign (easy way to call client)
+		3-	Ribbon (Client load balancing)
 		4-	Eureka client & Eureka server
-		5-	Zuul api
-		6-	Cloud-Sleuth
-		7-	Zipkin
+		5-	Zuul api (Gateway Api)
+		6-	Cloud-Sleuth ( log tracing)
+		7-	Zipkin ( log tracing)
+		8-	hystrix /Resilience4J (circuit breaker )
+		9-	ELK  (central logging)
 		
 		
 		
