@@ -36,8 +36,10 @@ public class FSController {
 	@GetMapping("/fs/ping")
 	public String getPing() {
 		String ret = "first-service and called to ";
-		String ssResponse = new RestTemplate().getForObject("http://localhost:8180/ss/ping", String.class);
-		ret = ret+ssResponse;
+		System.out.println(env.getProperty("key1"));
+		//String ssResponse = new RestTemplate().getForObject("http://localhost:8180/ss/ping", String.class);
+		//ret = ret+ssResponse;
+		ret =ret+env.getProperty("key1");
 		return ret;
 	}
 	
