@@ -182,9 +182,10 @@ Spring microservice Notes(using Spring boot)
 
   you can access properties of center config servers using eureka
   ----------------------------------------------------------------
-  1) register config server into eureka
-  for specific branchs properties u can use following properties
-  spring.cloud.config.label=dev1
+  
+		  1) register config server into eureka
+		  for specific branchs properties u can use following properties
+		  spring.cloud.config.label=dev1
   
 
 
