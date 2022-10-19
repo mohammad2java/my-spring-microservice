@@ -186,6 +186,21 @@ Spring microservice Notes(using Spring boot)
 		  1) register config server into eureka
 		  for specific branchs properties u can use following properties
 		  spring.cloud.config.label=dev1
+		  
+		  
+		  
+		  
+		  
+		  
+		 distributed Transaction management( based on event driven archetecture)
+		 ====================================================================
+	                    There are two ways of coordination sagas pattern:
+			    ---------------------------------------------------
+		1) Choreography - each local transaction publishes domain events that trigger local transactions in other services
+	           this is called decentrlize approach ,this is mostly adapted by the industry.
+	  
+	  2) Orchestration - an orchestrator (object) tells the participants what local transactions to execute
+	      this is called centralized approach not recommeded even if you have such specific requirement.
   
 
 
