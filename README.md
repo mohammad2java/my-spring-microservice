@@ -19,11 +19,11 @@ Spring microservice Notes(using Spring boot)
 		2-	Feign (easy way to call client)
 		3-	Ribbon (Client load balancing)
 		4-	Eureka client & Eureka server
-		5-	Zuul api (Gateway Api)
+		5-	Zuul api (Gateway Api) - Zuul is no longer under active development by Netflix. Spring now provides Spring Cloud Gateway as a replacement.
 		6-	Cloud-Sleuth ( log tracing)
 		7-	Zipkin ( log tracing)
 		8-	hystrix /Resilience4J (circuit breaker )
-		9-	ELK  (central logging)
+		9-	ELK  (central logging) /corologix
 		
 		
 		
