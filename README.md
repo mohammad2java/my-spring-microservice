@@ -147,15 +147,51 @@ Spring microservice Notes(using Spring boot)
 			}
 			
 			
+
+			 Resilience4j in a Spring Boot project. We'll cover:
+				Retry
+				CircuitBreaker
+				RateLimiter
+						
+			<dependency>
+			    <groupId>io.github.resilience4j</groupId>
+			    <artifactId>resilience4j-spring-boot2</artifactId>
+			    <version>1.7.1</version>
+			</dependency>
+			
+			application.properties
+			# Retry Config
+			resilience4j.retry.instances.myRetry.max-attempts=3
+			resilience4j.retry.instances.myRetry.wait-duration=1s
+			
+			# Circuit Breaker Config
+			resilience4j.circuitbreaker.instances.myCircuitBreaker.failure-rate-threshold=50
+			resilience4j.circuitbreaker.instances.myCircuitBreaker.wait-duration-in-open-state=5s
+			resilience4j.circuitbreaker.instances.myCircuitBreaker.sliding-window-size=5
+			
+			# Rate Limiter Config
+			resilience4j.ratelimiter.instances.myRateLimiter.limit-for-period=2
+			resilience4j.ratelimiter.instances.myRateLimiter.limit-refresh-period=1s
 			
 			
+			 @Service
+			public class ExternalService {
 			
+			    @Retry(name = "myRetry", fallbackMethod = "fallback")
+			    @CircuitBreaker(name = "myCircuitBreaker", fallbackMethod = "fallback")
+			    @RateLimiter(name = "myRateLimiter", fallbackMethod = "fallback")
+			    public String callExternalAPI() {
+			        System.out.println("Calling external API...");
+			        throw new RuntimeException("External API failed");
+			    }
 			
+			    public String fallback(Throwable t) {
+			        return "Fallback response due to: " + t.getMessage();
+			    }
+			}
+						
 			
-			
-			
-			
-			
+	
 			1-config client  (just need to add in pom.xml for all micro-service)
 			2-config server(create one component and add this to pom and configure application.properties)
 			spring.cloud.config.server.git.uri=file:///D:/myLearning/git_repo
