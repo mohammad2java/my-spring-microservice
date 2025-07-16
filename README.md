@@ -189,7 +189,13 @@ Spring microservice Notes(using Spring boot)
 			        return "Fallback response due to: " + t.getMessage();
 			    }
 			}
-						
+
+
+                     CircuitBreaker [Resilence4J]
+                    	[CLOSED] → (failure-rate exceeds threshold) → [OPEN]
+			[OPEN]  → (wait-duration ends) → [HALF-OPEN]
+			[HALF-OPEN] → (test calls succeed) → [CLOSED]
+			[HALF-OPEN] → (any test call fails) → [OPEN]
 			
 	
 			1-config client  (just need to add in pom.xml for all micro-service)
