@@ -130,9 +130,27 @@ Spring microservice Notes(using Spring boot)
 			4-Extend ZuulFilter class like- 
 			@Component
 			public class ZuulLoggingFilter extends ZuulFilter{
-			
-			
-			
+
+                          
+			 => Spring Cloud Gateway requires Spring Boot 2.0 or later, because:
+                                Spring Cloud Gateway:
+				Built on Project Reactor and Spring WebFlux.
+				Fully non-blocking, asynchronous, and reactive.
+				Supports Path rewriting, rate limiting, filters, circuit breakers, OAuth2, etc.
+
+                          <artifactId>spring-cloud-starter-gateway</artifactId>
+
+                        ====== Spring Cloud Gateway Routes ======
+			spring.cloud.gateway.routes[0].id=user-service
+			spring.cloud.gateway.routes[0].uri=http://localhost:8081
+			spring.cloud.gateway.routes[0].predicates[0]=Path=/users/**
+			 
+                        for Auth & Authz
+	                ---------------------------
+			public class AuthorizationFilter implements GatewayFilter {
+
+                           
+   
 			Cloud-sleuth
 			
 			Why:
