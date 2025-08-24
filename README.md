@@ -17,10 +17,11 @@ Spring microservice Notes(using Spring boot)
 		List of spring cloud starter
 		1-	Config client & Config server (central config management)
 		2-	Feign (easy way to call client)
-		3-	Ribbon (Client load balancing)
+		3-	Ribbon[deprecated] (Client load balancing) -use Spring cload load balancer 
 		4-	Eureka client & Eureka server
-		5-	Zuul api (Gateway Api) - Zuul is no longer under active development by Netflix. Spring now provides Spring Cloud Gateway as a replacement.
-		6-	Cloud-Sleuth ( log tracing) valid till spring 2.x from spring boot 3.x select zipkin [from starter.io] contains 3[-micrometer-tracing-bridge-brave,zipkin-reporter-brave,actuator]
+		5-	Zuul api[deprecated] (Gateway Api) - Zuul is no longer under active development by Netflix. Spring now provides Spring Cloud Gateway as a replacement.
+		6-	Cloud-Sleuth[deprecated in boot3] ( log tracing) valid till spring 2.x from spring boot 3.x select zipkin [from starter.io] 
+             contains 3[-micrometer-tracing-bridge-brave,zipkin-reporter-brave,actuator]
 		7-	Zipkin ( log tracing)
 		8-	hystrix /Resilience4J (circuit breaker )
 		9-	ELK  (central logging) /corologix
@@ -262,6 +263,7 @@ Spring microservice Notes(using Spring boot)
 	  2) Orchestration - an orchestrator (object) tells the participants what local transactions to execute
 	      this is called centralized approach not recommeded even if you have such specific requirement.
   
+
 
 
 
